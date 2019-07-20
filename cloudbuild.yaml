@@ -5,7 +5,8 @@ steps:
   - deploy
   - ${_FUNWATER}
   - --region=${_REGION}
-  - --source=.
+  - --source=${_SOURCE}
+  - --entry-point=${_ENTRY_POINT}
   - --trigger-http
   - --runtime=python37
   - --memory=128MB
