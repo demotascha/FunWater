@@ -3,7 +3,7 @@ steps:
   args:
   - functions
   - deploy
-  - FunWater-tw
+  - ${_FUNWATER}
   - --region=${_REGION}
   - --source=.
   - --trigger-http
