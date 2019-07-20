@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - FunWater-tw
+  - --region=${_REGION}
+  - --source=.
+  - --trigger-http
+  - --set-env-vars=[GOOGLE_API_KEY=${_GOOGLE_API_KEY}]
