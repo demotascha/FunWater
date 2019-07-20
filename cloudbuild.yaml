@@ -7,4 +7,10 @@ steps:
   - --region=${_REGION}
   - --source=.
   - --trigger-http
-  - --set-env-vars=[GOOGLE_API_KEY=${_GOOGLE_API_KEY}]
+  - --set-env-vars=ACCESS_TOKEN=${_LINE_ACCESS_TOKEN}
+  - --set-env-vars=SECRET=${_LINE_SECRET}
+  - --set-env-vars=GOOGLE_API_KEY=${_GOOGLE_API_KEY}
+  - --set-env-vars=DIALOGFLOW_CLIENT_ACCESS_TOKEN=${_DIALOGFLOW_CLIENT_ACCESS_TOKEN}
+  - --set-env-vars=ALGOLIA_APP_ID=${_ALGOLIA_APP_ID}
+  - --set-env-vars=ALGOLIA_APP_KEY=${_ALGOLIA_APP_KEY}
+  - --set-env-vars=ALGOLIA_APP_INDEX=${_ALGOLIA_APP_INDEX}
