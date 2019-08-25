@@ -9,7 +9,8 @@ steps:
   - --entry-point=${_ENTRY_POINT}
   - --trigger-http
   - --runtime=python37
-  - --memory=128MB
+  - --memory=256MB
+  - --timeout=300
   - --set-env-vars=ALGOLIA_APP_ID=${_ALGOLIA_APP_ID}
   - --set-env-vars=ALGOLIA_APP_KEY=${_ALGOLIA_APP_KEY}
   - --set-env-vars=ALGOLIA_APP_INDEX=${_ALGOLIA_APP_INDEX}
