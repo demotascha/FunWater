@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - ${_FUNWATER_TOOLS}
+  - --region=${_REGION}
+  - --source=${_SOURCE}
+  - --entry-point=${_ENTRY_POINT}
+  - --trigger-http
+  - --runtime=python37
+  - --memory=128MB
+  - --set-env-vars=ALGOLIA_APP_ID=${_ALGOLIA_APP_ID}
+  - --set-env-vars=ALGOLIA_APP_KEY=${_ALGOLIA_APP_KEY}
+  - --set-env-vars=ALGOLIA_APP_INDEX=${_ALGOLIA_APP_INDEX}
