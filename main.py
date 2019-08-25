@@ -10,7 +10,7 @@ ALGOLIA_APP_INDEX = os.environ.get('ALGOLIA_APP_INDEX')
 client = SearchClient.create(ALGOLIA_APP_ID, ALGOLIA_APP_KEY)
 index = client.init_index(ALGOLIA_APP_INDEX)
 
-def main():
+def main(request):
     # results = requests.get("https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=59629791-5f4f-4c91-903b-e9ab9aa0653b").json()
 
     infos=[{"objectID": 1, "city": "臺北市", "administrative_area": "大安", "place": "淨水大樓1樓", "updated_time": "2019/7/8 下午 03:25:00", "management_unit": "北水處長興淨水場", "link": "http://gismobile.water.gov.taipei/W/S.aspx?SD=0131h", "uid": "0131h", "status_updated_time": "2016/11/1 上午 09:55:00", "place_category": "臺北自來水事業處", "escherichia_coli": "<1", "place_type": "機關", "opening_hours": "0:00~24:00", "place_divide": "南區", "address": "臺北市長興街131號", "contact": "+886287335678", "place_name": "北水處長興淨水場淨水大樓1樓", "status": "正常", "_geoloc": {"lat": 25.014828, "lng": 121.548456}}, {"objectID": 2, "city": "臺北市", "administrative_area": "大安", "place": "淨水大樓3樓", "updated_time": "2019/7/18 下午 12:05:00", "management_unit": "北水處水質科", "link": "http://gismobile.water.gov.taipei/W/S.aspx?SD=0131i", "uid": "0131i", "status_updated_time": "2016/11/1 上午 09:55:00", "place_category": "臺北自來水事業處", "escherichia_coli": "<1", "place_type": "機關", "opening_hours": "0:00~24:00", "place_divide": "南區", "address": "臺北市長興街131號", "contact": "+886287335678", "place_name": "北水處淨水大樓3樓", "status": "正常", "_geoloc": {"lat": 25.014847, "lng": 121.548555}}]
