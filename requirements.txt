@@ -1,1 +1,2 @@
 algoliasearch
+google-cloud-translate
