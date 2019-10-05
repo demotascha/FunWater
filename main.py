@@ -1,6 +1,7 @@
 import os
 import re
 import requests
+from google.cloud import translate
 from algoliasearch.search_client import SearchClient
 
 ALGOLIA_APP_ID = os.environ.get('ALGOLIA_APP_ID')
@@ -9,8 +10,11 @@ ALGOLIA_APP_INDEX = os.environ.get('ALGOLIA_APP_INDEX')
 
 client = SearchClient.create(ALGOLIA_APP_ID, ALGOLIA_APP_KEY)
 index = client.init_index(ALGOLIA_APP_INDEX)
+# Instantiates a client
+translate_client = translate.Client()
 
 def main(request):
+    target = 'en'
     results = requests.get("https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=59629791-5f4f-4c91-903b-e9ab9aa0653b").json()
 
     infos=[]
@@ -26,6 +30,8 @@ def main(request):
             lng = point['經度']
             point['緯度'] = lng
             point['經度'] = lat
+        place_name_en = translate_client.translate(point['場所名稱'],target_language=target)
+        place_en = translate_client.translate(point['設置地點'],target_language=target)
         # 重新整理資料
         info['objectID'] = int(point['_id'])
         info['city'] = point['市別']
@@ -44,6 +50,8 @@ def main(request):
         info['address'] = point['地址']
         info['contact'] = transform_tel_style(point['連絡電話'])
         info['place_name'] = point['場所名稱']
+        info['place_name_en'] = format(place_name_en['translatedText'])
+        info['place_en'] = format(place_en['translatedText'])
         info['status'] = point['狀態']
         info['_geoloc'] = {
             'lat': float(point['緯度']),
