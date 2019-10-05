@@ -10,7 +10,7 @@ steps:
   - --trigger-http
   - --runtime=python37
   - --memory=256MB
-  - --timeout=300
+  - --timeout=540
   - --set-env-vars=ALGOLIA_APP_ID=${_ALGOLIA_APP_ID}
   - --set-env-vars=ALGOLIA_APP_KEY=${_ALGOLIA_APP_KEY}
   - --set-env-vars=ALGOLIA_APP_INDEX=${_ALGOLIA_APP_INDEX}
