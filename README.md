@@ -1,6 +1,6 @@
 # FunWater
 
-![image](https://drive.google.com/uc?export=view&id=1jGcoZn_ARZ2YEWuvt3RZagTolb9DkI5U)
+![image](https://drive.google.com/uc?export=view&id=11ugfHT5l8z6ToCZm4bMDNAoDKmeJveIY)
 
 ## Proposal
 藉由 FunWater 小幫手，簡單找到飲水機資訊（暫時以台北市為例）。
